@@ -7,6 +7,7 @@ import taskRouter from './task-route';
 import subtaskRouter from './subtask-route';
 import commentRouter from './comment-route';
 import fileRouter from './file-upload-route';
+import voiceRouter from './voice-route';
 
 const router = Router();
 
@@ -18,5 +19,6 @@ router.use('/tasks', taskRouter);
 router.use('/subtasks', subtaskRouter);
 router.use('/comments', commentRouter);
 router.use('/files', fileRouter);
+router.use('/voice', voiceRouter);
 
 export default router;

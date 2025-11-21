@@ -123,6 +123,18 @@ class UserRepository {
       },
     });
   }
+  // (추가) 프로젝트 안에서 이름으로 멤버 찾기 (Users.name 기준)
+  async findMembersByNamesInProject(
+    names: string[],
+    projectId: number
+  ): Promise<Pick<Users, 'id' | 'name'>[]> {
+    if (!names.length) return [];
+    const rows = await prisma.project_members.findMany({
+      where: { projectId, user: { name: { in: names } } },
+      select: { user: { select: { id: true, name: true } } },
+    });
+    return rows.map((r) => r.user);
+  }
 }
 
 export default UserRepository;
