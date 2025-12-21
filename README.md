@@ -1,171 +1,95 @@
-#  2팀 - MoonShot 프로젝트
+## 🌙 MoonShot
+**2025.07.22 ~ 2025.08.13** </br>
+프로젝트 일정 관리 서비스 백엔드 </br>
+팀 기반 프로젝트 관리와 일정 추적을 지원하는 RESTful 백엔드 시스템
 
-📄 [2팀 프로젝트 계획서 보기](https://www.notion.so/2065c17d948680e984f1e73ea7c43d70)
+📄 [프로젝트 계획서](https://www.notion.so/jinsoldev/2-24f985c94195816d9f9ef239efe27e11?source=copy_link)
+
+<p align="center">
+  <img src="public/MoonShot2315.gif" width="600" />
+</p>
+---
+
+## 1. 서비스 링크
+Render와 Vercel 무료 배포 환경 특성상, 첫 접속 시 서버 응답이 다소 지연될 수 있습니다. 양해 부탁드립니다.
+- **[FRONTEND](https://nb-02-moon-shot-fe.vercel.app/login)**
+- **[BACKEND API](https://nb02-moonshot-be.onrender.com)**
+- **[SWAGGER API DOCS](https://nb02-moonshot-be.onrender.com/api-docs/)**
+
+## 2. 프로젝트 아키텍처
+<img alt="image" src="public/architecture.png">
+
+## 3. 기술 스택
+| 구분             | 기술                           |
+| -------------- | ------------------------------ |
+| Backend        | Express.js, TypeScript         |
+| ORM            | Prisma                         |
+| Database       | PostgreSQL, Render RDS         |
+| Auth           | JWT, Passport (Local / Google) |
+| File Upload    | Multer, Firebase Storage       |
+| API Docs       | Swagger                        |
+| Infra / Deploy | Vercel, Render                 |
+| Collaboration  | GitHub, Discord                |
+| CI/CD          | GitHub Actions                 |
 
 ---
 
-## 👨‍👩‍👧‍👦 팀원 구성
+## 4. 팀 구성
+| 이름           | 역할                       |
+| ------------ | ------------------------ |
+| 고민재          | SubTask               |
+| **김진솔 (본인)** | **Member / Comment / Deploy** |
+| 하상준          | Task / File Upload       |
+| 강시연          | User / Project           |
+| 차수연          | Auth / OAuth             |
 
-| 이름     | GitHub 링크 |
-|----------|-------------|
-| 고민재   | [@nbkominjae](https://github.com/nbkominjae) |
-| 김진솔   | [@JINSOLdev](https://github.com/JINSOLdev) |
-| 하상준   | [@hippo8427](https://github.com/hippo8427) |
-| 강시연   | [@singnyeo](https://github.com/singnyeo) |
-| 차수연   | [@chya-chya](https://github.com/chya-chya) |
 
----
+## 5. 담당 기능
+### Member (프로젝트 멤버 관리)
+- 프로젝트 멤버 초대/추가/제외
+- 초대 수락/거부 처리
+- 초대 상태(pending, accepted, rejected) 기반 멤버 관리 로직 구현
+- 프로젝트 생성자만 멤버 제외 가능하도록 권한 체크 로직 적용
 
-## 📌 프로젝트 소개
+### Comment (할 일 댓글 관리)
+- 할 일에 대한 댓글 등록/수정/삭제 기능 구현
 
-- **프로젝트 이름:** MoonShot  
-- **프로젝트 주제:** 프로젝트 일정 관리 서비스 백엔드 시스템 구축  
-- **진행 기간:** 2025.07.22 ~ 2025.08.13  
+### Deploy (배포 및 인프라 관리)
+- Vercel을 활용한 프론트엔드 서비스 배포 및 관리
+- Render를 활용한 백엔드 서비스 배포 및 관리    
 
----
-
-## 🛠️ 기술 스택
-
-- **Backend:** Express.js, Prisma ORM  
-- **Database:** PostgreSQL  
-- **API 문서화:** Swagger  
-- **협업 도구:** Git & GitHub, Discord  
-
----
-
-## 🧩 팀원별 구현 기능
-
-### 💻 고민재
-#### 하위 할 일
-- 하위 할 일 등록/조회/상세조회/수정/삭제
-  
-### 💻 김진솔
-#### 멤버
-- 멤버 초대/추가/제외/수락/거부
-    
-#### 댓글
-- 댓글 등록/조회/수정/삭제
-
-### 💻 하상준
-#### 할 일
-- 할 일 등록/조회/상세조회/수정/삭제
-
-#### 파일 업로드
-- 첨부파일 업로드
-
-### 💻 강시연
-#### 유저
-- 유저 조회/수정/참여중 프로젝트 조회/참여중 프로젝트 할 일 조회
- 
-#### 프로젝트
-- 프로젝트 등록/조회/수정/삭제
-
-### 💻 차수연
-#### 인증
-- 회원가입/로그인/토큰 갱신/구글 로그인/구글 로그인(콜백)
-
----
-
-## 📁 프로젝트 파일 구조
-📦 프로젝트 루트
+## 6. 프로젝트 구조
 ```
-📦src
- ┣ 📂config
- ┃ ┣ 📜db.ts
- ┃ ┣ 📜firebase-admin.ts
- ┃ ┗ 📜swagger.ts
- ┣ 📂controllers
- ┃ ┣ 📜auth-controllers.ts
- ┃ ┣ 📜comment-controller.ts
- ┃ ┣ 📜file-upload-controller.ts
- ┃ ┣ 📜member-controller.ts
- ┃ ┣ 📜project-controller.ts
- ┃ ┣ 📜subtask-controller.ts
- ┃ ┣ 📜task-controller.ts
- ┃ ┗ 📜user-controller.ts
- ┣ 📂middlewares
- ┃ ┣ 📜authorization.ts
- ┃ ┣ 📜error-handler.ts
- ┃ ┣ 📜multer.ts
- ┃ ┗ 📜validation.ts
- ┣ 📂repositories
- ┃ ┣ 📜auth-repositorie.ts
- ┃ ┣ 📜comment-repository.ts
- ┃ ┣ 📜member-repository.ts
- ┃ ┣ 📜project-repository.ts
- ┃ ┣ 📜subtask-repository.ts
- ┃ ┣ 📜task-repository.ts
- ┃ ┗ 📜user-repository.ts
- ┣ 📂routes
- ┃ ┣ 📜auth-route.ts
- ┃ ┣ 📜comment-route.ts
- ┃ ┣ 📜file-upload-route.ts
- ┃ ┣ 📜index-route.ts
- ┃ ┣ 📜member-route.ts
- ┃ ┣ 📜project-route.ts
- ┃ ┣ 📜subtask-route.ts
- ┃ ┣ 📜task-route.ts
- ┃ ┗ 📜user-route.ts
- ┣ 📂services
- ┃ ┣ 📜auth-service.ts
- ┃ ┣ 📜comment-service.ts
- ┃ ┣ 📜member-service.ts
- ┃ ┣ 📜project-service.ts
- ┃ ┣ 📜subtask-service.ts
- ┃ ┣ 📜task-service.ts
- ┃ ┗ 📜user-service.ts
- ┣ 📂swagger
- ┃ ┗ 📂paths
- ┃ ┃ ┣ 📜auth-path.json
- ┃ ┃ ┣ 📜member-path.json
- ┃ ┃ ┣ 📜project-path.json
- ┃ ┃ ┣ 📜subtask-path.json
- ┃ ┃ ┣ 📜task-path.json
- ┃ ┃ ┗ 📜user-path.json
- ┣ 📂types
- ┃ ┣ 📜express.d.ts
- ┃ ┣ 📜subtask-type.ts
- ┃ ┗ 📜task-type.ts
- ┣ 📂utils
- ┃ ┣ 📂dtos
- ┃ ┃ ┣ 📜comment-dto.ts
- ┃ ┃ ┣ 📜member-dto.ts
- ┃ ┃ ┣ 📜project-dto.ts
- ┃ ┃ ┗ 📜task-dto.ts
- ┃ ┣ 📂passport
- ┃ ┃ ┣ 📜googleStrategy.ts
- ┃ ┃ ┣ 📜index.ts
- ┃ ┃ ┗ 📜jwtStrategy.ts
- ┃ ┣ 📜email.ts
- ┃ ┗ 📜token.ts
- ┣ 📜app.ts
- ┗ 📜server.ts
+src
+ ┣ config        # DB, Swagger, Firebase 설정
+ ┣ controllers   # 요청/응답 처리
+ ┣ services      # 비즈니스 로직
+ ┣ repositories  # DB 접근 (Prisma)
+ ┣ routes        # API 라우팅
+ ┣ middlewares   # 인증, 에러, validation
+ ┣ utils         # DTO, token, email, passport 전략
+ ┣ swagger       # Swagger path 정의
+ ┣ types         # 타입 정의
+ ┣ app.ts
+ ┗ server.ts
 ```
 
----
+## 7. 회고
+이번 프로젝트에서는 FE/BE 연동 과정에서 발생한 이슈와 트러블슈팅 내용을 날짜별로 공유하며 협업을 진행했다.</br>
+이를 통해 내가 담당한 기능뿐 아니라 프로젝트 전반의 흐름과 다른 파트에서 발생하는 문제까지 함께 이해할 수 있었고, “이 기능을 내가 구현했다면 어떻게 했을까?”라는 관점에서 한 단계 더 깊이 고민할 수 있었다. 
 
-## 🌐 구현 홈페이지
+또한 코드 머지 전 필수 리뷰어 지정과 PR 템플릿을 활용해 모든 변경 사항이 코드 리뷰를 거치도록 했고, ESLint, Prettier, Husky, lint-staged를 도입해 코드 스타일 차이로 인한 불필요한 충돌을 줄였다.
+그 결과 리뷰 과정이 스타일 논의보다 로직과 설계 중심으로 진행될 수 있었고, 팀 프로젝트임에도 코드의 일관성과 안정성을 유지할 수 있었다.
 
-- **프론트엔드**: [https://nb-02-moon-shot-fe.vercel.app/login](https://nb-02-moon-shot-fe.vercel.app/login)
+다만 전반적인 협업은 원활했지만, 팀원 간 실시간 음성 소통이 부족했던 점은 아쉬움으로 남았다. </br>
+개발 과정에서 생각이나 고민을 말로 풀어내는 빈도가 줄어들다 보니, 일부 이슈는 문서나 메시지로만 공유되어 논의가 충분히 확장되지 못한 부분도 있었다. 그래서 다음 프로젝트에서는 데일리 스크럼에서 음성으로 주요 진행 상황과 이슈를 공유하는 것을 기본으로 하여
+의사소통의 밀도를 높이고, 문제를 더 이른 시점에 발견할 수 있도록 개선하고자 한다.
 
-- **백엔드**: [https://nb02-moonshot.onrender.com/](https://nb02-moonshot.onrender.com/)
+또한 FE/BE 연동 테스트를 개발 막바지가 아닌 기능 단위 완성 시점마다 소규모로 진행해 수정 사항이 한 시점에 몰리는 현상을 줄이고, 일정 리스크를 낮추는 방식으로 발전시키고 싶다.
 
-- **Swagger**: [https://nb02-moonshot.onrender.com/api-docs/](https://nb02-moonshot.onrender.com/api-docs/)
+마지막으로 코드 품질과 성능 개선 효과를 보다 명확히 확인하기 위해 린트 에러 수, API 응답 시간, 테스트 커버리지와 같은 정량적인 지표를 측정·기록하는 체계를 도입해
+지속적으로 개선해 나가는 개발 방식을 실천해보고자 한다.
 
----
-
-## 📊 ERD (Entity Relationship Diagram)
-
-<img width="1334" height="655" alt="image" src="https://github.com/user-attachments/assets/5ab19065-4be4-48c7-a097-a5b924a1b961" />
-
----
-
-## 🧠 프로젝트 회고 및 발표자료
-
-📎 [발표자료 다운로드](#)  
-📎 [회고 링크 / Notion / PPT 등](#)
-
----
 
 
 
