@@ -25,7 +25,7 @@ Render와 Vercel 무료 배포 환경 특성상, 첫 접속 시 서버 응답이
 | Backend        | Express.js, TypeScript         |
 | ORM            | Prisma                         |
 | Database       | PostgreSQL, Render RDS         |
-| Auth           | JWT, Passport (Local / Google) |
+| Auth           | JWT, Passport  |
 | File Upload    | Multer, Firebase Storage       |
 | API Docs       | Swagger                        |
 | Infra / Deploy | Vercel, Render                 |
@@ -38,7 +38,7 @@ Render와 Vercel 무료 배포 환경 특성상, 첫 접속 시 서버 응답이
 | 이름           | 역할                       |
 | ------------ | ------------------------ |
 | 고민재          | SubTask               |
-| **김진솔 (본인)** | **Member / Comment / Deploy** |
+| **김진솔** | **Member / Comment / Deploy** |
 | 하상준          | Task / File Upload       |
 | 강시연          | User / Project           |
 | 차수연          | Auth / OAuth             |
@@ -55,8 +55,9 @@ Render와 Vercel 무료 배포 환경 특성상, 첫 접속 시 서버 응답이
 - 할 일에 대한 댓글 등록/수정/삭제 기능 구현
 
 ### Deploy (배포 및 인프라 관리)
+- CI/CD : GitHub Actions를 활용해서 빌드 (main 브랜치에 push 시 워크 플로우 자동 실행)
 - Vercel을 활용한 프론트엔드 서비스 배포 및 관리
-- Render를 활용한 백엔드 서비스 배포 및 관리    
+- Render를 활용한 백엔드 서비스 배포 및 관리
 
 ## 6. 프로젝트 구조
 ```
@@ -89,6 +90,7 @@ src
 
 마지막으로 코드 품질과 성능 개선 효과를 보다 명확히 확인하기 위해 린트 에러 수, API 응답 시간, 테스트 커버리지와 같은 정량적인 지표를 측정·기록하는 체계를 도입해
 지속적으로 개선해 나가는 개발 방식을 실천해보고자 한다.
+
 
 
 
