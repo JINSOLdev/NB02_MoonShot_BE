@@ -1,65 +1,41 @@
-## 🌙 MoonShot
-**2025.07.22 ~ 2025.08.13** </br>
-프로젝트 일정 관리 서비스 백엔드 </br>
-팀 기반 프로젝트 관리와 일정 추적을 지원하는 RESTful 백엔드 시스템
+# 🌙 MoonShot
+> 2025.07.22 ~ 2025.08.13 </br>
+> 프로젝트 일정 관리 서비스의 백엔드 코드 입니다. </br>
 
-📄 [프로젝트 계획서](https://www.notion.so/jinsoldev/2-24f985c94195816d9f9ef239efe27e11?source=copy_link)
+--- 
 
-<p align="center">
-  <img src="public/MoonShot2315.gif" width="600" />
+## 서비스 플로우
+
+<p align="center" width="100%">
+  <video src="https://github.com/user-attachments/assets/64ae9821-67d9-4363-bbb4-9853e1bdace8" width="80%" controls></video>
 </p>
 
+---
 
-## 1. 서비스 링크
-Render와 Vercel 무료 배포 환경 특성상, 첫 접속 시 서버 응답이 다소 지연될 수 있습니다. 양해 부탁드립니다.
-- **[FRONTEND](https://nb-02-moon-shot-fe.vercel.app/login)**
-- **[BACKEND API](https://nb02-moonshot-be.onrender.com)**
-- **[SWAGGER API DOCS](https://nb02-moonshot-be.onrender.com/api-docs/)**
+## 프로젝트 소개
+Moonshot은 팀 협업과 프로젝트 관리를 돕는 서비스 입니다. </br>
+사용자는 프로젝트 생성, 팀원 초대, 업무 관리, 댓글을 통한 소통 등 다양한 협업 기능을 이용할 수 있습니다. </br>
+또한 실시간에 가까운 업데이트와 직관적인 UI를 통해 효율적인 협업 환경을 경험할 수 있습니다. </br>
 
-## 2. 프로젝트 아키텍처
-<img alt="image" src="public/architecture.png">
+---
 
-## 3. 기술 스택
+## 프로젝트 아키텍처
+
+---
+
+## 기술 스택
 | 구분             | 기술                           |
 | -------------- | ------------------------------ |
 | Backend        | Express.js, TypeScript         |
 | ORM            | Prisma                         |
 | Database       | PostgreSQL, Render RDS         |
-| Auth           | JWT, Passport  |
 | File Upload    | Multer, Firebase Storage       |
-| API Docs       | Swagger                        |
-| Infra / Deploy | Vercel, Render                 |
-| Collaboration  | GitHub, Discord                |
-| CI/CD          | GitHub Actions                 |
+| CI/CD, Deploy  | GitHub Actions, Vercel, Render |
+| Tools          | Swagger, Discord               |
 
 ---
 
-## 4. 팀 구성
-| 이름           | 역할                       |
-| ------------ | ------------------------ |
-| 고민재          | SubTask               |
-| **김진솔** | **Member / Comment / Deploy** |
-| 하상준          | Task / File Upload       |
-| 강시연          | User / Project           |
-| 차수연          | Auth / OAuth             |
-
-
-## 5. 담당 기능
-### Member (프로젝트 멤버 관리)
-- 프로젝트 멤버 초대/추가/제외
-- 초대 수락/거부 처리
-- 초대 상태(pending, accepted, rejected) 기반 멤버 관리 로직 구현
-- 프로젝트 생성자만 멤버 제외 가능하도록 권한 체크 로직 적용
-
-### Comment (할 일 댓글 관리)
-- 할 일에 대한 댓글 등록/수정/삭제 기능 구현
-
-### Deploy (배포 및 인프라 관리)
-- CI/CD : GitHub Actions를 활용해서 빌드 (main 브랜치에 push 시 워크 플로우 자동 실행)
-- Vercel을 활용한 프론트엔드 서비스 배포 및 관리
-- Render를 활용한 백엔드 서비스 배포 및 관리
-
-## 6. 프로젝트 구조
+## 프로젝트 구조
 ```
 src
  ┣ config        # DB, Swagger, Firebase 설정
@@ -75,7 +51,40 @@ src
  ┗ server.ts
 ```
 
-## 7. 회고
+---
+
+## 담당 기능
+### 1. Member (프로젝트 멤버 관리)
+- 프로젝트 멤버 초대/추가/제외
+- 초대 수락/거부 처리
+- 초대 상태(pending, accepted, rejected) 기반 멤버 관리 로직 구현
+- 프로젝트 생성자만 멤버 제외 가능하도록 권한 체크 로직 적용
+
+### 2. Comment (할 일 댓글 관리)
+- 할 일에 대한 댓글 등록/수정/삭제 기능 구현
+
+### Deploy (배포 및 인프라 관리)
+- CI/CD : GitHub Actions를 활용해서 빌드 (main 브랜치에 push 시 워크 플로우 자동 실행)
+- Vercel을 활용한 프론트엔드 서비스 배포 및 관리
+- Render를 활용한 백엔드 서비스 배포 및 관리
+
+---
+
+## 구현 중 겪은 문제 & 해결
+
+### 1. 
+
+문제 </br>
+
+고민 </br>
+
+해결 </br>
+
+결과 </br>
+
+---
+
+## 회고
 이번 프로젝트에서는 FE/BE 연동 과정에서 발생한 이슈와 트러블슈팅 내용을 날짜별로 공유하며 협업을 진행했다.</br>
 이를 통해 내가 담당한 기능뿐 아니라 프로젝트 전반의 흐름과 다른 파트에서 발생하는 문제까지 함께 이해할 수 있었고, “이 기능을 내가 구현했다면 어떻게 했을까?”라는 관점에서 한 단계 더 깊이 고민할 수 있었다. 
 
@@ -90,22 +99,6 @@ src
 
 마지막으로 코드 품질과 성능 개선 효과를 보다 명확히 확인하기 위해 린트 에러 수, API 응답 시간, 테스트 커버리지와 같은 정량적인 지표를 측정·기록하는 체계를 도입해
 지속적으로 개선해 나가는 개발 방식을 실천해보고자 한다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
