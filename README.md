@@ -20,6 +20,7 @@ Moonshot은 팀 협업과 프로젝트 관리를 돕는 서비스 입니다. </b
 ---
 
 ## 프로젝트 아키텍처
+<img width="1121" height="534" alt="Image" src="https://github.com/user-attachments/assets/5d66f270-c203-4181-ad45-e7aeffbf2b03" />
 
 ---
 
